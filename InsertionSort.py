@@ -1,3 +1,6 @@
+import time
+import random
+# Algoritmo insertionsort
 def insertionSort(array):
     for i in range(1,len(array)):
         aux = array[i]
@@ -7,7 +10,18 @@ def insertionSort(array):
                 j = j - 1
         array[j+1]=aux
     print(array)
+    
+# Generador de matriz con numeros aleatorios
+def n_values(n):  
+    array=[ ]
+    for i in range(n):
+        array.append(random.randint(1,n))
+    return array
 
-
-arr=[7,5,4,9,6,2,1,3,8]
-insertionSort(arr)
+inicio=time.time()
+array = n_values(10000)
+insertionSort(array)
+print(array)
+final=time.time()
+tiempo_computacional= final-inicio
+print(tiempo_computacional)

@@ -5,18 +5,7 @@ import random
 def Busqueda(array, numero):
     for n in range(len(array)):
         if array[n] == numero:
-            print("lo encontro")
-
-# Algoritmo insertionSort
-def insertionSort(array):
-    for i in range(1,len(array)):
-        aux = array[i]
-        j = i-1
-        while j >= 0 and array[j] > aux :
-                array[j + 1] = array[j]
-                j = j - 1
-        array[j + 1] = aux
-    print(array)
+            return True
 
 # Generador de matriz con numeros aleatorios
 def n_values(n):  
@@ -28,12 +17,15 @@ def n_values(n):
 #Tiempo computacional usando la libreria time
 inicio = time.time()
 numero = 8
-array = n_values(10000)
-Busqueda(array,numero)
-insertionSort(array)
+array = n_values(100)
+print(array)
+if Busqueda(array,numero) == True:
+    print("lo encontro")
+else:
+    print("no se encuentra")
 final = time.time()
-
-print(inicio)
+tiempo_computacional= final - inicio
+print(tiempo_computacional)
 
 
 
